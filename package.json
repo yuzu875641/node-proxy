@@ -1,0 +1,11 @@
+{
+  "name": "simple-web-proxy",
+  "version": "1.0.0",
+  "description": "A simple web proxy built with Node.js and Vercel.",
+  "scripts": {
+    "start": "node api/proxy.js"
+  },
+  "dependencies": {
+    "http-proxy-middleware": "^2.0.6"
+  }
+}
