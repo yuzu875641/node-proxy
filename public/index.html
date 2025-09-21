@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Proxy</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>シンプルなウェブプロキシ</h1>
+        <form id="proxyForm">
+            <input type="text" id="urlInput" placeholder="ここにURLを入力してください" required>
+            <button type="submit">Go</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('proxyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const url = document.getElementById('urlInput').value;
+            // プロキシサーバーのURLを構築
+            const proxyUrl = `/api/proxy?url=${encodeURIComponent(url)}`;
+            // 新しいウィンドウで開く
+            window.open(proxyUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
